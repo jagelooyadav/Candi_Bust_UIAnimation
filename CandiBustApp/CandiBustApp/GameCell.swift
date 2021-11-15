@@ -40,6 +40,13 @@ class GameCell: UITableViewCell {
         iconView.anchorToSuperView(trailingRelation: .ignore,
                                    bottomRelation: .ignore,
                                    leading: 20, top: 20)
+        
+        // add green button
+        let button = Button()
+        button.style = .style1
+        container.addSubview(button)
+        button.anchorToSuperView(topRelation: .ignore, leading: 25.0, trailing: 25.0, bottom: 25.0)
+        
     }
     
     private func update() {

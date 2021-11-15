@@ -10,6 +10,5 @@ import Foundation
 protocol GameCelViewModelProtocol: class {
 }
 
-class GameCelViewModel: GameCelViewModelProtocol {
-    
+final class GameCelViewModel: GameCelViewModelProtocol {
 }

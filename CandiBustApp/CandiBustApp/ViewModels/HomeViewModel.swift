@@ -7,13 +7,21 @@
 
 import Foundation
 
+/// Protocol abstraction for home view model
 protocol HomeViewModelProtocol: class {
+    
+    /// Coordinator object responsible for screen navigation 
     var coordinator: HomeCoordinatorProtocol? { get set }
+    
+    /// Screen title displayed on navigation bar
     var title: String { get }
+    
+    /// Table entries count in home page list view
     var numberOfEntries: Int { get }
 }
 
-class HomeViewModel: HomeViewModelProtocol {
+/// Concrete implmentation for Home View model
+final class HomeViewModel: HomeViewModelProtocol {
     weak var coordinator: HomeCoordinatorProtocol?
     
     init(coordinator: HomeCoordinatorProtocol?) {
