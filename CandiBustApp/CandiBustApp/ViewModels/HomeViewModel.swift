@@ -10,6 +10,7 @@ import Foundation
 protocol HomeViewModelProtocol: class {
     var coordinator: HomeCoordinatorProtocol? { get set }
     var title: String { get }
+    var numberOfEntries: Int { get }
 }
 
 class HomeViewModel: HomeViewModelProtocol {
@@ -19,5 +20,7 @@ class HomeViewModel: HomeViewModelProtocol {
         self.coordinator = coordinator
     }
     
-    var title: String { "Play" }
+    var title: String { "PLAY" }
+    
+    var numberOfEntries: Int { 2 }
 }

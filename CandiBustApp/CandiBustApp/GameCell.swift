@@ -34,6 +34,12 @@ class GameCell: UITableViewCell {
         if let window = UIApplication.shared.windows.last {
             container.heightAnchor.constraint(equalToConstant: window.frame.height * 0.6).isActive = true
         }
+        self.selectionStyle = .none
+        let iconView = IconView()
+        container.addSubview(iconView)
+        iconView.anchorToSuperView(trailingRelation: .ignore,
+                                   bottomRelation: .ignore,
+                                   leading: 20, top: 20)
     }
     
     private func update() {

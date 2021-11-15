@@ -13,6 +13,7 @@ protocol HomeCoordinatorProtocol: CoordinatorProtocol {
 
 class HomeCoordinator: Coordinator, HomeCoordinatorProtocol {
     override func start() {
+        // Home page journey started
         let homeViewController = HomeViewController(viewModel: HomeViewModel(coordinator: self))
         self.rootViewController.pushViewController(homeViewController, animated: true)
     }
