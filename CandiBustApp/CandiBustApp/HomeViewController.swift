@@ -28,6 +28,10 @@ class HomeViewController: UIViewController {
         tableView = UITableView(frame: .zero, style: .plain)
         view.addSubview(tableView)
         tableView.anchorToSuperView(topAnchor: titleLabel.bottomAnchor, top: 20, bottom: 20.0)
+        tableView.estimatedRowHeight = 300.0
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(GameCell.self, forCellReuseIdentifier: "GameCell")
+        tableView.dataSource = self
     }
     
     private let viewModel: HomeViewModelProtocol
@@ -38,6 +42,18 @@ class HomeViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError()
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell")
+        return cell!
     }
 }

@@ -21,6 +21,8 @@
 		16F701ED2742894A00988CAD /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701EC2742894A00988CAD /* HomeCoordinator.swift */; };
 		16F701F327428B3F00988CAD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701F227428B3F00988CAD /* HomeViewModel.swift */; };
 		16F701FC2742925500988CAD /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701FB2742925500988CAD /* UIView+Anchor.swift */; };
+		16F702052742C3E400988CAD /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F702042742C3E400988CAD /* GameCell.swift */; };
+		16F7020D2742C43100988CAD /* GameCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F7020C2742C43100988CAD /* GameCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		16F701EC2742894A00988CAD /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		16F701F227428B3F00988CAD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		16F701FB2742925500988CAD /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
+		16F702042742C3E400988CAD /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		16F7020C2742C43100988CAD /* GameCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		16F701A7274284E100988CAD /* CandiBustApp */ = {
 			isa = PBXGroup;
 			children = (
+				16F702032742C3BE00988CAD /* Views */,
 				16F701FA2742924300988CAD /* Utils */,
 				16F701F127428B2B00988CAD /* ViewModels */,
 				16F701DE274285A700988CAD /* Coordinator */,
@@ -158,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				16F701F227428B3F00988CAD /* HomeViewModel.swift */,
+				16F7020C2742C43100988CAD /* GameCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -168,6 +174,14 @@
 				16F701FB2742925500988CAD /* UIView+Anchor.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		16F702032742C3BE00988CAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				16F702042742C3E400988CAD /* GameCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,9 +319,11 @@
 				16F701E5274285E100988CAD /* Coordinator.swift in Sources */,
 				16F701F327428B3F00988CAD /* HomeViewModel.swift in Sources */,
 				16F701A9274284E100988CAD /* AppDelegate.swift in Sources */,
+				16F702052742C3E400988CAD /* GameCell.swift in Sources */,
 				16F701AB274284E100988CAD /* SceneDelegate.swift in Sources */,
 				16F701ED2742894A00988CAD /* HomeCoordinator.swift in Sources */,
 				16F701B3274284E100988CAD /* CandiBustApp.xcdatamodeld in Sources */,
+				16F7020D2742C43100988CAD /* GameCellViewModel.swift in Sources */,
 				16F701FC2742925500988CAD /* UIView+Anchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

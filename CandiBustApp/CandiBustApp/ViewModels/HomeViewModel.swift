@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol HomeViewModelProtocol {
+protocol HomeViewModelProtocol: class {
     var coordinator: HomeCoordinatorProtocol? { get set }
     var title: String { get }
 }
