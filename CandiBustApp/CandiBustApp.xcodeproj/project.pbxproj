@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		16F701A9274284E100988CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701A8274284E100988CAD /* AppDelegate.swift */; };
 		16F701AB274284E100988CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AA274284E100988CAD /* SceneDelegate.swift */; };
-		16F701AD274284E100988CAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AC274284E100988CAD /* ViewController.swift */; };
+		16F701AD274284E100988CAD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AC274284E100988CAD /* HomeViewController.swift */; };
 		16F701B0274284E100988CAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16F701AE274284E100988CAD /* Main.storyboard */; };
 		16F701B3274284E100988CAD /* CandiBustApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16F701B1274284E100988CAD /* CandiBustApp.xcdatamodeld */; };
 		16F701B5274284E200988CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16F701B4274284E200988CAD /* Assets.xcassets */; };
 		16F701B8274284E200988CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16F701B6274284E200988CAD /* LaunchScreen.storyboard */; };
 		16F701C3274284E200988CAD /* CandiBustAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701C2274284E200988CAD /* CandiBustAppTests.swift */; };
 		16F701CE274284E200988CAD /* CandiBustAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701CD274284E200988CAD /* CandiBustAppUITests.swift */; };
+		16F701E0274285D200988CAD /* AppCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701DF274285D200988CAD /* AppCoodinator.swift */; };
+		16F701E5274285E100988CAD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701E4274285E100988CAD /* Coordinator.swift */; };
+		16F701ED2742894A00988CAD /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701EC2742894A00988CAD /* HomeCoordinator.swift */; };
+		16F701F327428B3F00988CAD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701F227428B3F00988CAD /* HomeViewModel.swift */; };
+		16F701FC2742925500988CAD /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701FB2742925500988CAD /* UIView+Anchor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +44,7 @@
 		16F701A5274284E100988CAD /* CandiBustApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandiBustApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F701A8274284E100988CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16F701AA274284E100988CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		16F701AC274284E100988CAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		16F701AC274284E100988CAD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		16F701AF274284E100988CAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16F701B2274284E100988CAD /* CandiBustApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CandiBustApp.xcdatamodel; sourceTree = "<group>"; };
 		16F701B4274284E200988CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +56,11 @@
 		16F701C9274284E200988CAD /* CandiBustAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandiBustAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F701CD274284E200988CAD /* CandiBustAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandiBustAppUITests.swift; sourceTree = "<group>"; };
 		16F701CF274284E200988CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16F701DF274285D200988CAD /* AppCoodinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoodinator.swift; sourceTree = "<group>"; };
+		16F701E4274285E100988CAD /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		16F701EC2742894A00988CAD /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		16F701F227428B3F00988CAD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		16F701FB2742925500988CAD /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +111,12 @@
 		16F701A7274284E100988CAD /* CandiBustApp */ = {
 			isa = PBXGroup;
 			children = (
+				16F701FA2742924300988CAD /* Utils */,
+				16F701F127428B2B00988CAD /* ViewModels */,
+				16F701DE274285A700988CAD /* Coordinator */,
 				16F701A8274284E100988CAD /* AppDelegate.swift */,
 				16F701AA274284E100988CAD /* SceneDelegate.swift */,
-				16F701AC274284E100988CAD /* ViewController.swift */,
+				16F701AC274284E100988CAD /* HomeViewController.swift */,
 				16F701AE274284E100988CAD /* Main.storyboard */,
 				16F701B4274284E200988CAD /* Assets.xcassets */,
 				16F701B6274284E200988CAD /* LaunchScreen.storyboard */,
@@ -129,6 +142,32 @@
 				16F701CF274284E200988CAD /* Info.plist */,
 			);
 			path = CandiBustAppUITests;
+			sourceTree = "<group>";
+		};
+		16F701DE274285A700988CAD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				16F701E4274285E100988CAD /* Coordinator.swift */,
+				16F701DF274285D200988CAD /* AppCoodinator.swift */,
+				16F701EC2742894A00988CAD /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		16F701F127428B2B00988CAD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				16F701F227428B3F00988CAD /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		16F701FA2742924300988CAD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				16F701FB2742925500988CAD /* UIView+Anchor.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +300,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16F701AD274284E100988CAD /* ViewController.swift in Sources */,
+				16F701AD274284E100988CAD /* HomeViewController.swift in Sources */,
+				16F701E0274285D200988CAD /* AppCoodinator.swift in Sources */,
+				16F701E5274285E100988CAD /* Coordinator.swift in Sources */,
+				16F701F327428B3F00988CAD /* HomeViewModel.swift in Sources */,
 				16F701A9274284E100988CAD /* AppDelegate.swift in Sources */,
 				16F701AB274284E100988CAD /* SceneDelegate.swift in Sources */,
+				16F701ED2742894A00988CAD /* HomeCoordinator.swift in Sources */,
 				16F701B3274284E100988CAD /* CandiBustApp.xcdatamodeld in Sources */,
+				16F701FC2742925500988CAD /* UIView+Anchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
