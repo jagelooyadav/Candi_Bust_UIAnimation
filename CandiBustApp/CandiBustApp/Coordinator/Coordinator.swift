@@ -18,7 +18,7 @@ protocol CoordinatorProtocol: class {
     func removeChildCoordinator(_ coordinator: CoordinatorProtocol)
 }
 
-class Coordinator: CoordinatorProtocol {
+class Coordinator: NSObject, CoordinatorProtocol {
     var rootViewController: UINavigationController
     weak var parentCoordinator: CoordinatorProtocol?
     private(set) var childCoordinators: [CoordinatorProtocol] = []

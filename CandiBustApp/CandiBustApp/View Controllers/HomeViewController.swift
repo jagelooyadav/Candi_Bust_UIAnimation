@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(GameCell.self, forCellReuseIdentifier: "GameCell")
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     private let viewModel: HomeViewModelProtocol
@@ -53,7 +54,22 @@ extension HomeViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell")
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell") as! GameCell
+        
+        return cell
     }
 }
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("didSelectRowAt")
+        guard let selectedIndexPathCell = tableView.indexPathForSelectedRow,
+              let selectedCell = (tableView.cellForRow(at: selectedIndexPathCell) as? GameCell)?.container,
+        let selectedCellSuperview = selectedCell.superview
+        else {
+          return
+      }
+        self.viewModel.coordinator?.seeDetail(fromSourceFrame: selectedCellSuperview.convert(selectedCell.frame, to: nil))
+    }
+}
+

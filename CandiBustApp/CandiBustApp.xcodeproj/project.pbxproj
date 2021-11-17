@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1638BD6127441EBC00638D52 /* GameDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD6027441EBC00638D52 /* GameDetailCoordinator.swift */; };
+		1638BD672744203500638D52 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD662744203500638D52 /* GameDetailViewController.swift */; };
+		1638BD6C2744207100638D52 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD6B2744207100638D52 /* GameDetailViewModel.swift */; };
+		1638BD722744286400638D52 /* CandiScreenTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD712744286400638D52 /* CandiScreenTransitioner.swift */; };
 		16F701A9274284E100988CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701A8274284E100988CAD /* AppDelegate.swift */; };
 		16F701AB274284E100988CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AA274284E100988CAD /* SceneDelegate.swift */; };
 		16F701AD274284E100988CAD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AC274284E100988CAD /* HomeViewController.swift */; };
@@ -45,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1638BD6027441EBC00638D52 /* GameDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailCoordinator.swift; sourceTree = "<group>"; };
+		1638BD662744203500638D52 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
+		1638BD6B2744207100638D52 /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
+		1638BD712744286400638D52 /* CandiScreenTransitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandiScreenTransitioner.swift; sourceTree = "<group>"; };
 		16F701A5274284E100988CAD /* CandiBustApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandiBustApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F701A8274284E100988CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16F701AA274284E100988CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1638BD6527441FFA00638D52 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				16F701AC274284E100988CAD /* HomeViewController.swift */,
+				1638BD662744203500638D52 /* GameDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		16F7019C274284E100988CAD = {
 			isa = PBXGroup;
 			children = (
@@ -119,13 +136,13 @@
 		16F701A7274284E100988CAD /* CandiBustApp */ = {
 			isa = PBXGroup;
 			children = (
+				1638BD6527441FFA00638D52 /* View Controllers */,
 				16F702032742C3BE00988CAD /* Views */,
 				16F701FA2742924300988CAD /* Utils */,
 				16F701F127428B2B00988CAD /* ViewModels */,
 				16F701DE274285A700988CAD /* Coordinator */,
 				16F701A8274284E100988CAD /* AppDelegate.swift */,
 				16F701AA274284E100988CAD /* SceneDelegate.swift */,
-				16F701AC274284E100988CAD /* HomeViewController.swift */,
 				16F701AE274284E100988CAD /* Main.storyboard */,
 				16F701B4274284E200988CAD /* Assets.xcassets */,
 				16F701B6274284E200988CAD /* LaunchScreen.storyboard */,
@@ -159,6 +176,7 @@
 				16F701E4274285E100988CAD /* Coordinator.swift */,
 				16F701DF274285D200988CAD /* AppCoodinator.swift */,
 				16F701EC2742894A00988CAD /* HomeCoordinator.swift */,
+				1638BD6027441EBC00638D52 /* GameDetailCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -168,6 +186,7 @@
 			children = (
 				16F701F227428B3F00988CAD /* HomeViewModel.swift */,
 				16F7020C2742C43100988CAD /* GameCellViewModel.swift */,
+				1638BD6B2744207100638D52 /* GameDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -175,6 +194,7 @@
 		16F701FA2742924300988CAD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1638BD712744286400638D52 /* CandiScreenTransitioner.swift */,
 				16F701FB2742925500988CAD /* UIView+Anchor.swift */,
 			);
 			path = Utils;
@@ -321,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16F701AD274284E100988CAD /* HomeViewController.swift in Sources */,
+				1638BD672744203500638D52 /* GameDetailViewController.swift in Sources */,
 				16F702122742D9BA00988CAD /* IconView.swift in Sources */,
 				16F701E0274285D200988CAD /* AppCoodinator.swift in Sources */,
 				16F701E5274285E100988CAD /* Coordinator.swift in Sources */,
@@ -331,8 +352,11 @@
 				16F701ED2742894A00988CAD /* HomeCoordinator.swift in Sources */,
 				16F701B3274284E100988CAD /* CandiBustApp.xcdatamodeld in Sources */,
 				16F7020D2742C43100988CAD /* GameCellViewModel.swift in Sources */,
+				1638BD722744286400638D52 /* CandiScreenTransitioner.swift in Sources */,
 				16F702172742DC0400988CAD /* Button.swift in Sources */,
+				1638BD6C2744207100638D52 /* GameDetailViewModel.swift in Sources */,
 				16F701FC2742925500988CAD /* UIView+Anchor.swift in Sources */,
+				1638BD6127441EBC00638D52 /* GameDetailCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

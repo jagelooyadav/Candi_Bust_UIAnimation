@@ -34,6 +34,12 @@ class Button: UIButton {
         }
     }
     
+    var title: String? {
+        didSet {
+            self.setTitle(title, for: .normal)
+        }
+    }
+    
     var style: ButtonStyle = .style1 {
         didSet {
             let colour = { () -> UIColor  in
