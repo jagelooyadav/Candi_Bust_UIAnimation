@@ -38,7 +38,7 @@ class GamePlayerViewController: UIViewController {
         self.playerBottomConstraint = bottomConstraint
         bottomConstraint?.constant = -view.frame.width * 0.7
         view.layoutIfNeeded()
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             bottomConstraint?.constant = 0
             self.view.layoutIfNeeded()
         }

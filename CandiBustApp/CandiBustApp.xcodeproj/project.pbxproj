@@ -17,6 +17,7 @@
 		1638BDA82746D7BE00638D52 /* GamePlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDA72746D7BE00638D52 /* GamePlayerViewModel.swift */; };
 		1638BDAD2746D8BB00638D52 /* GamePlayerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDAC2746D8BB00638D52 /* GamePlayerCoordinator.swift */; };
 		1638BDB22746E1BC00638D52 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDB12746E1BC00638D52 /* PlayerView.swift */; };
+		1638BDB72746EBC000638D52 /* UIColor+Candi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDB62746EBC000638D52 /* UIColor+Candi.swift */; };
 		16F701A9274284E100988CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701A8274284E100988CAD /* AppDelegate.swift */; };
 		16F701AB274284E100988CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AA274284E100988CAD /* SceneDelegate.swift */; };
 		16F701AD274284E100988CAD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AC274284E100988CAD /* HomeViewController.swift */; };
@@ -65,6 +66,7 @@
 		1638BDA72746D7BE00638D52 /* GamePlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerViewModel.swift; sourceTree = "<group>"; };
 		1638BDAC2746D8BB00638D52 /* GamePlayerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerCoordinator.swift; sourceTree = "<group>"; };
 		1638BDB12746E1BC00638D52 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		1638BDB62746EBC000638D52 /* UIColor+Candi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Candi.swift"; sourceTree = "<group>"; };
 		16F701A5274284E100988CAD /* CandiBustApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandiBustApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F701A8274284E100988CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16F701AA274284E100988CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				1638BD712744286400638D52 /* CandiScreenTransitioner.swift */,
 				16F701FB2742925500988CAD /* UIView+Anchor.swift */,
+				1638BDB62746EBC000638D52 /* UIColor+Candi.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				16F702122742D9BA00988CAD /* IconView.swift in Sources */,
 				16F701E0274285D200988CAD /* AppCoodinator.swift in Sources */,
 				16F701E5274285E100988CAD /* Coordinator.swift in Sources */,
+				1638BDB72746EBC000638D52 /* UIColor+Candi.swift in Sources */,
 				1638BDAD2746D8BB00638D52 /* GamePlayerCoordinator.swift in Sources */,
 				1638BDA82746D7BE00638D52 /* GamePlayerViewModel.swift in Sources */,
 				16F701F327428B3F00988CAD /* HomeViewModel.swift in Sources */,
