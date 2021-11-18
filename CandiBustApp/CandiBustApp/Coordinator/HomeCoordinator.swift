@@ -22,16 +22,20 @@ class HomeCoordinator: Coordinator, HomeCoordinatorProtocol {
     }
     
     func seeDetail(info: CellAnimationInfo) {
-        let gameDetailCoordinator = GameDetailCoordinator(rootViewController: self.rootViewController)
+        let rootViewController = UINavigationController.init()
+        let gameDetailCoordinator = GameDetailCoordinator(rootViewController: rootViewController)
         self.addChildCoordinator(gameDetailCoordinator)
         gameDetailCoordinator.parentCoordinator = self
         gameDetailCoordinator.start()
         
         // Present detail view controller and customise presentation animation
         let homeDetailViewController = GameDetailViewController(viewModel: GameDetailViewModel(coordinator: gameDetailCoordinator))
-        homeDetailViewController.transitioningDelegate = self
+        rootViewController.modalPresentationStyle = .custom
+        rootViewController.navigationBar.isHidden = true
+        rootViewController.pushViewController(homeDetailViewController, animated: true)
+        rootViewController.transitioningDelegate = self
         homeDetailViewController.modalPresentationStyle = .overFullScreen
-        self.rootViewController.viewControllers.last?.present(homeDetailViewController, animated: true, completion: {
+        self.rootViewController.viewControllers.last?.present(rootViewController, animated: true, completion: {
             homeDetailViewController.animationInfo = info
             homeDetailViewController.animationCompleted?()
         })

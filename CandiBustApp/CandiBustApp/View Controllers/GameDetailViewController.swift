@@ -160,7 +160,7 @@ extension GameDetailViewController {
     }
     
     private func displayPlayButton() {
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.5) {
             self.downloadCloseButton.alpha = 0.0
             self.button.alpha = 0.0
             self.button.progress = 0.0
@@ -289,9 +289,10 @@ extension GameDetailViewController {
     private func animatePlayButton() {
         downloadTrailingConstraint?.constant = 20.0
         button.title = "Play"
-        button.action = {
+        button.action = { [weak self] in
             // Play button press
             print("Play button press")
+            self?.viewModel.startGame()
         }
         self.view.layoutIfNeeded()
         let position = button.center

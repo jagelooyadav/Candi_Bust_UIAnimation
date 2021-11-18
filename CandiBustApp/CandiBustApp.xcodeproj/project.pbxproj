@@ -13,6 +13,9 @@
 		1638BD722744286400638D52 /* CandiScreenTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD712744286400638D52 /* CandiScreenTransitioner.swift */; };
 		1638BD7B2745153400638D52 /* CellAnimationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD7A2745153400638D52 /* CellAnimationInfo.swift */; };
 		1638BD88274672DD00638D52 /* AnimatedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD87274672DD00638D52 /* AnimatedCollectionView.swift */; };
+		1638BDA32746D76C00638D52 /* GamePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDA22746D76C00638D52 /* GamePlayerViewController.swift */; };
+		1638BDA82746D7BE00638D52 /* GamePlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDA72746D7BE00638D52 /* GamePlayerViewModel.swift */; };
+		1638BDAD2746D8BB00638D52 /* GamePlayerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDAC2746D8BB00638D52 /* GamePlayerCoordinator.swift */; };
 		16F701A9274284E100988CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701A8274284E100988CAD /* AppDelegate.swift */; };
 		16F701AB274284E100988CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AA274284E100988CAD /* SceneDelegate.swift */; };
 		16F701AD274284E100988CAD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AC274284E100988CAD /* HomeViewController.swift */; };
@@ -57,6 +60,9 @@
 		1638BD712744286400638D52 /* CandiScreenTransitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandiScreenTransitioner.swift; sourceTree = "<group>"; };
 		1638BD7A2745153400638D52 /* CellAnimationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAnimationInfo.swift; sourceTree = "<group>"; };
 		1638BD87274672DD00638D52 /* AnimatedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCollectionView.swift; sourceTree = "<group>"; };
+		1638BDA22746D76C00638D52 /* GamePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerViewController.swift; sourceTree = "<group>"; };
+		1638BDA72746D7BE00638D52 /* GamePlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerViewModel.swift; sourceTree = "<group>"; };
+		1638BDAC2746D8BB00638D52 /* GamePlayerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerCoordinator.swift; sourceTree = "<group>"; };
 		16F701A5274284E100988CAD /* CandiBustApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandiBustApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F701A8274284E100988CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16F701AA274284E100988CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 			children = (
 				16F701AC274284E100988CAD /* HomeViewController.swift */,
 				1638BD662744203500638D52 /* GameDetailViewController.swift */,
+				1638BDA22746D76C00638D52 /* GamePlayerViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -190,6 +197,7 @@
 				16F701DF274285D200988CAD /* AppCoodinator.swift */,
 				16F701EC2742894A00988CAD /* HomeCoordinator.swift */,
 				1638BD6027441EBC00638D52 /* GameDetailCoordinator.swift */,
+				1638BDAC2746D8BB00638D52 /* GamePlayerCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -200,6 +208,7 @@
 				16F701F227428B3F00988CAD /* HomeViewModel.swift */,
 				16F7020C2742C43100988CAD /* GameCellViewModel.swift */,
 				1638BD6B2744207100638D52 /* GameDetailViewModel.swift */,
+				1638BDA72746D7BE00638D52 /* GamePlayerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -359,8 +368,11 @@
 				16F702122742D9BA00988CAD /* IconView.swift in Sources */,
 				16F701E0274285D200988CAD /* AppCoodinator.swift in Sources */,
 				16F701E5274285E100988CAD /* Coordinator.swift in Sources */,
+				1638BDAD2746D8BB00638D52 /* GamePlayerCoordinator.swift in Sources */,
+				1638BDA82746D7BE00638D52 /* GamePlayerViewModel.swift in Sources */,
 				16F701F327428B3F00988CAD /* HomeViewModel.swift in Sources */,
 				16F701A9274284E100988CAD /* AppDelegate.swift in Sources */,
+				1638BDA32746D76C00638D52 /* GamePlayerViewController.swift in Sources */,
 				16F702052742C3E400988CAD /* GameCell.swift in Sources */,
 				16F701AB274284E100988CAD /* SceneDelegate.swift in Sources */,
 				16F701ED2742894A00988CAD /* HomeCoordinator.swift in Sources */,

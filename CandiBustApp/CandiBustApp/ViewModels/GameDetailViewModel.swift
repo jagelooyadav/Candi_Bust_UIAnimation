@@ -12,6 +12,7 @@ protocol GameDetailViewModelProtocol {
     var descriptionText: String { get }
     var readMoreTitle: String { get }
     var nextButtonTitle: String { get }
+    func startGame()
 }
 
 class GameDetailViewModel: GameDetailViewModelProtocol {
@@ -33,5 +34,9 @@ class GameDetailViewModel: GameDetailViewModelProtocol {
     
     var nextButtonTitle: String {
         "Download \n 30 MB"
+    }
+    
+    func startGame() {
+        self.coordinator?.playGame()
     }
 }
