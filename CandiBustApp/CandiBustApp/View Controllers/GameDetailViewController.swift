@@ -16,6 +16,7 @@ class GameDetailViewController: UIViewController {
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
     private let readMoreButton = UIButton()
+    private var collectionView = AnimatedCollectionView()
     
     var animationCompleted: (() -> Void)?
     var animationInfo: CellAnimationInfo?
@@ -53,6 +54,18 @@ extension GameDetailViewController {
         setupTitleLabel()
         setupDescriptionLabel()
         setupMoreButton()
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView() {
+        view.addSubview(collectionView)
+        collectionView.backgroundColor = .white
+        collectionView.anchorToSuperView(topAnchor: readMoreButton.bottomAnchor,
+                                      bottomRelation: .ignore,
+                                      leading: 0,
+                                      trailing: 0,
+                                      top: 10)
+        collectionView.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -20.0).isActive = true
     }
     
     func setupCloseButton() {
@@ -66,6 +79,7 @@ extension GameDetailViewController {
     }
     
     private func hideChilds() {
+        collectionView.alpha = 0.0
         closeButton.alpha = 0.0
         iconView.alpha = 0.0
         button.alpha = 0.0
@@ -97,6 +111,7 @@ extension GameDetailViewController {
     private func setupButton() {
         view.addSubview(button)
         button.style = .style1
+        button.setTitle(viewModel.nextButtonTitle, for: .normal)
         button.anchorToSuperView(bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
                                  topRelation: .ignore,
                                  leading: 20,
@@ -197,6 +212,13 @@ extension GameDetailViewController {
         }
     }
     
+    func animateCollectionView() {
+        UIView.animate(withDuration: 0.5) {
+            self.collectionView.alpha = 1.0
+            self.collectionView.reload(isAnimated: true)
+        }
+    }
+    
     private func startAnimations() {
         self.closeButton.alpha = 1.0
         self.iconView.alpha = 1.0
@@ -206,6 +228,7 @@ extension GameDetailViewController {
         self.animateIcon(completion: {
             self.animateDescriptionLabel()
             self.animateReadMoreButton()
+            self.animateCollectionView()
         })
         self.animateButton()
         self.animateTitle()

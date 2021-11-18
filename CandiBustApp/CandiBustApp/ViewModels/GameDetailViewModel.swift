@@ -11,6 +11,7 @@ protocol GameDetailViewModelProtocol {
     var title: String { get }
     var descriptionText: String { get }
     var readMoreTitle: String { get }
+    var nextButtonTitle: String { get }
 }
 
 class GameDetailViewModel: GameDetailViewModelProtocol {
@@ -28,5 +29,9 @@ class GameDetailViewModel: GameDetailViewModelProtocol {
     
     var readMoreTitle: String {
         "READ MORE"
+    }
+    
+    var nextButtonTitle: String {
+        "Download \n 30 MB"
     }
 }

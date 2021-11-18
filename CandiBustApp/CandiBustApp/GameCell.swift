@@ -42,12 +42,10 @@ class GameCell: UITableViewCell {
                                    bottomRelation: .ignore,
                                    leading: 20, top: 20)
         
-        // add green button
         button.style = .style1
         container.addSubview(button)
         button.anchorToSuperView(topRelation: .ignore, leading: 25.0, trailing: 25.0, bottom: 25.0)
         button.isUserInteractionEnabled = false
-        
     }
     
     private func update() {

@@ -23,7 +23,7 @@ class Button: UIButton {
         }
     }
     
-    var height: CGFloat = 50.0 {
+    var height: CGFloat = 60.0 {
         didSet {
             if let heightConstraint = self.heightConstraint {
                 heightConstraint.constant = height
@@ -56,7 +56,7 @@ class Button: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.heightConstraint = self.heightAnchor.constraint(equalToConstant: 50.0)
+        self.heightConstraint = self.heightAnchor.constraint(equalToConstant: 60.0)
         self.heightConstraint?.isActive = true
     }
     
