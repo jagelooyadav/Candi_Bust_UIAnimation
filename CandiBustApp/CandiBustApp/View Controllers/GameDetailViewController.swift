@@ -12,7 +12,7 @@ class GameDetailViewController: UIViewController {
     private let viewModel: GameDetailViewModelProtocol
     private let closeButton = UIButton(type: .custom)
     private let iconView = IconView()
-    private let button = Button()
+    private let button = ProgressBarButton()
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
     private let readMoreButton = UIButton()
@@ -117,6 +117,16 @@ extension GameDetailViewController {
                                  leading: 20,
                                  trailing: 20,
                                  bottom: 20.0)
+        button.action = {
+            self.button.progress = 0
+            // Just add temporary animation. Progress can be set as per downoad progress
+            UIView.animate(withDuration: 2.0) {
+                self.button.progress = 1.0
+                self.button.layoutIfNeeded()
+            } completion: { _ in
+                self.button.progress = 0.0
+            }
+        }
     }
     
     private func setupTitleLabel() {

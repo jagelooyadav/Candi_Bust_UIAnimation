@@ -11,7 +11,7 @@ import UIKit
 class GameCell: UITableViewCell {
     let container = UIView()
     let iconView = IconView()
-    let button = Button()
+    let button = ProgressBarButton()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

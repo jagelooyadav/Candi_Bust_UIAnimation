@@ -75,7 +75,7 @@ private class PageCell: UICollectionViewCell {
     
     private func setup() {
         let grey = UIView()
-        grey.backgroundColor = .gray
+        grey.backgroundColor = .lightGray
         self.addSubview(grey)
         grey.anchorToSuperView()
     }
