@@ -50,7 +50,7 @@ class GamePlayerViewController: UIViewController {
         childView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
      }
     
-    @objc func tap() {
+    @objc private func tap() {
         UIView.animate(withDuration: 0.5) {
             self.playerBottomConstraint?.constant = -self.view.frame.width * 0.7
             self.view.layoutIfNeeded()
