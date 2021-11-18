@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private var tableView: UITableView!
+    let titleLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +20,16 @@ class HomeViewController: UIViewController {
     }
     
     private func setupViews() {
-        let titleLabel = UILabel()
+        
         titleLabel.text = self.viewModel.title
         titleLabel.textAlignment = .center
         self.view.addSubview(titleLabel)
-        titleLabel.anchorToSuperView(topAnchor: view.safeAreaLayoutGuide.topAnchor, bottomRelation: .ignore, top: 10.0)
+        titleLabel.anchorToSuperView(topAnchor: view.safeAreaLayoutGuide.topAnchor,
+                                     leadingRelation: .ignore,
+                                     trailingRelation: .ignore,
+                                     bottomRelation: .ignore,
+                                     top: 10.0)
+        titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
         tableView = UITableView(frame: .zero, style: .plain)
         view.addSubview(tableView)
@@ -64,12 +70,12 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("didSelectRowAt")
         guard let selectedIndexPathCell = tableView.indexPathForSelectedRow,
-              let selectedCell = (tableView.cellForRow(at: selectedIndexPathCell) as? GameCell)?.container,
-        let selectedCellSuperview = selectedCell.superview
-        else {
-          return
-      }
-        self.viewModel.coordinator?.seeDetail(fromSourceFrame: selectedCellSuperview.convert(selectedCell.frame, to: nil))
+              let selectedCell = tableView.cellForRow(at: selectedIndexPathCell) as? GameCell else { return }
+        let animationInfo = CellAnimationInfo(iconAbsolutePosition: selectedCell.iconView.superview?.convert(selectedCell.iconView.center, to: view),
+                                              butonAbsolutePosition: selectedCell.button.superview?.convert(selectedCell.button.center, to: view),
+                                              buttonAbsoluteFrame: selectedCell.superview?.convert(selectedCell.button.frame, from: nil), titleAbsolutePosition: titleLabel.superview?.convert(titleLabel.center, to: view),
+                                              titleAbsoluteFrame: titleLabel.superview?.convert(titleLabel.frame, from: nil))
+        self.viewModel.coordinator?.seeDetail(info: animationInfo)
     }
 }
 

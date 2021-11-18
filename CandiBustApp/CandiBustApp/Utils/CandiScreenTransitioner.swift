@@ -26,22 +26,20 @@ class CandiScreenTransitioner: NSObject, UIViewControllerAnimatedTransitioning {
    
         containerView.addSubview(toView)
         containerView.bringSubviewToFront(recipeView)
-        recipeView.isHidden = true
-        recipeView.setNeedsDisplay()
-        UIView.animateKeyframes(withDuration: 0.5,
-                                delay: 0.0,
-                                options: UIView.KeyframeAnimationOptions.allowUserInteraction) {
+        //recipeView.isHidden = true
+       
+        UIView.animate(withDuration: 0.5) {
             toView.alpha = 1.0
             recipeView.alpha = 1.0
             
             if self.presenting {
                 toView.alpha = 1.0
                 recipeView.alpha = 1.0
-                recipeView.isHidden = false
+                //recipeView.isHidden = false
             } else {
                 toView.alpha = 0.0
                 recipeView.alpha = 0.0
-                recipeView.isHidden = true
+                //recipeView.isHidden = true
             }
         } completion: { _ in
             if !self.presenting {

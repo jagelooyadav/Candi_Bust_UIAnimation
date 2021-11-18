@@ -10,6 +10,9 @@ import UIKit
 
 class GameCell: UITableViewCell {
     let container = UIView()
+    let iconView = IconView()
+    let button = Button()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setup()
@@ -34,14 +37,12 @@ class GameCell: UITableViewCell {
             container.heightAnchor.constraint(equalToConstant: window.frame.height * 0.6).isActive = true
         }
         self.selectionStyle = .none
-        let iconView = IconView()
         container.addSubview(iconView)
         iconView.anchorToSuperView(trailingRelation: .ignore,
                                    bottomRelation: .ignore,
                                    leading: 20, top: 20)
         
         // add green button
-        let button = Button()
         button.style = .style1
         container.addSubview(button)
         button.anchorToSuperView(topRelation: .ignore, leading: 25.0, trailing: 25.0, bottom: 25.0)

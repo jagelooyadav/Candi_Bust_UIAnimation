@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol HomeCoordinatorProtocol: CoordinatorProtocol {
-    func seeDetail(fromSourceFrame frame: CGRect?)
+    func seeDetail(info: CellAnimationInfo)
 }
 
 class HomeCoordinator: Coordinator, HomeCoordinatorProtocol {
@@ -21,8 +21,7 @@ class HomeCoordinator: Coordinator, HomeCoordinatorProtocol {
         self.rootViewController.pushViewController(homeViewController, animated: true)
     }
     
-    func seeDetail(fromSourceFrame frame: CGRect?) {
-        self.sourceFrame = frame
+    func seeDetail(info: CellAnimationInfo) {
         let gameDetailCoordinator = GameDetailCoordinator(rootViewController: self.rootViewController)
         self.addChildCoordinator(gameDetailCoordinator)
         gameDetailCoordinator.parentCoordinator = self
@@ -32,7 +31,10 @@ class HomeCoordinator: Coordinator, HomeCoordinatorProtocol {
         let homeDetailViewController = GameDetailViewController(viewModel: GameDetailViewModel(coordinator: gameDetailCoordinator))
         homeDetailViewController.transitioningDelegate = self
         homeDetailViewController.modalPresentationStyle = .overFullScreen
-        self.rootViewController.viewControllers.last?.present(homeDetailViewController, animated: true, completion: nil)
+        self.rootViewController.viewControllers.last?.present(homeDetailViewController, animated: true, completion: {
+            homeDetailViewController.animationInfo = info
+            homeDetailViewController.animationCompleted?()
+        })
     }
 }
 
@@ -40,20 +42,7 @@ class HomeCoordinator: Coordinator, HomeCoordinatorProtocol {
 
 extension HomeCoordinator: UIViewControllerTransitioningDelegate {
   func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    guard
-        let sourceFrame = self.sourceFrame
-      else {
-        return nil
-    }
-    
-    transition.originFrame = sourceFrame
-    transition.originFrame = CGRect(
-      x: transition.originFrame.origin.x,
-      y: transition.originFrame.origin.y,
-      width: transition.originFrame.size.width,
-      height: transition.originFrame.size.height
-    )
-    
+
     transition.presenting = true
     
     return transition

@@ -11,6 +11,7 @@
 		1638BD672744203500638D52 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD662744203500638D52 /* GameDetailViewController.swift */; };
 		1638BD6C2744207100638D52 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD6B2744207100638D52 /* GameDetailViewModel.swift */; };
 		1638BD722744286400638D52 /* CandiScreenTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD712744286400638D52 /* CandiScreenTransitioner.swift */; };
+		1638BD7B2745153400638D52 /* CellAnimationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD7A2745153400638D52 /* CellAnimationInfo.swift */; };
 		16F701A9274284E100988CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701A8274284E100988CAD /* AppDelegate.swift */; };
 		16F701AB274284E100988CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AA274284E100988CAD /* SceneDelegate.swift */; };
 		16F701AD274284E100988CAD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AC274284E100988CAD /* HomeViewController.swift */; };
@@ -53,6 +54,7 @@
 		1638BD662744203500638D52 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		1638BD6B2744207100638D52 /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
 		1638BD712744286400638D52 /* CandiScreenTransitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandiScreenTransitioner.swift; sourceTree = "<group>"; };
+		1638BD7A2745153400638D52 /* CellAnimationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAnimationInfo.swift; sourceTree = "<group>"; };
 		16F701A5274284E100988CAD /* CandiBustApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandiBustApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F701A8274284E100988CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16F701AA274284E100988CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,14 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		1638BD792745150E00638D52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1638BD7A2745153400638D52 /* CellAnimationInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		16F7019C274284E100988CAD = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		16F701A7274284E100988CAD /* CandiBustApp */ = {
 			isa = PBXGroup;
 			children = (
+				1638BD792745150E00638D52 /* Model */,
 				1638BD6527441FFA00638D52 /* View Controllers */,
 				16F702032742C3BE00988CAD /* Views */,
 				16F701FA2742924300988CAD /* Utils */,
@@ -352,6 +363,7 @@
 				16F701ED2742894A00988CAD /* HomeCoordinator.swift in Sources */,
 				16F701B3274284E100988CAD /* CandiBustApp.xcdatamodeld in Sources */,
 				16F7020D2742C43100988CAD /* GameCellViewModel.swift in Sources */,
+				1638BD7B2745153400638D52 /* CellAnimationInfo.swift in Sources */,
 				1638BD722744286400638D52 /* CandiScreenTransitioner.swift in Sources */,
 				16F702172742DC0400988CAD /* Button.swift in Sources */,
 				1638BD6C2744207100638D52 /* GameDetailViewModel.swift in Sources */,
