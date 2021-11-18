@@ -35,11 +35,9 @@ class CandiScreenTransitioner: NSObject, UIViewControllerAnimatedTransitioning {
             if self.presenting {
                 toView.alpha = 1.0
                 recipeView.alpha = 1.0
-                //recipeView.isHidden = false
             } else {
                 toView.alpha = 0.0
                 recipeView.alpha = 0.0
-                //recipeView.isHidden = true
             }
         } completion: { _ in
             if !self.presenting {
