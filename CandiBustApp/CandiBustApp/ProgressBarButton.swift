@@ -118,7 +118,7 @@ class ProgressBarButton: UIButton {
         progressBar.anchorToSuperView(trailingRelation: .ignore)
         self.clipsToBounds = true
         self.progressBarWidth?.isActive = true
-        self.progressBar.backgroundColor = .blue
+        self.progressBar.backgroundColor = .green
         self.bringSubviewToFront(self.titleLabel!)
         self.addTarget(self, action: #selector(click), for: .touchUpInside)
     }

@@ -13,7 +13,6 @@
 		1638BD722744286400638D52 /* CandiScreenTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD712744286400638D52 /* CandiScreenTransitioner.swift */; };
 		1638BD7B2745153400638D52 /* CellAnimationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD7A2745153400638D52 /* CellAnimationInfo.swift */; };
 		1638BD88274672DD00638D52 /* AnimatedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD87274672DD00638D52 /* AnimatedCollectionView.swift */; };
-		1638BD9B2746A7B100638D52 /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BD9A2746A7B100638D52 /* ProgressButton.swift */; };
 		16F701A9274284E100988CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701A8274284E100988CAD /* AppDelegate.swift */; };
 		16F701AB274284E100988CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AA274284E100988CAD /* SceneDelegate.swift */; };
 		16F701AD274284E100988CAD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AC274284E100988CAD /* HomeViewController.swift */; };
@@ -58,7 +57,6 @@
 		1638BD712744286400638D52 /* CandiScreenTransitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandiScreenTransitioner.swift; sourceTree = "<group>"; };
 		1638BD7A2745153400638D52 /* CellAnimationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAnimationInfo.swift; sourceTree = "<group>"; };
 		1638BD87274672DD00638D52 /* AnimatedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCollectionView.swift; sourceTree = "<group>"; };
-		1638BD9A2746A7B100638D52 /* ProgressButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
 		16F701A5274284E100988CAD /* CandiBustApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandiBustApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F701A8274284E100988CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16F701AA274284E100988CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,7 +220,6 @@
 				16F702112742D9BA00988CAD /* IconView.swift */,
 				16F702162742DC0400988CAD /* ProgressBarButton.swift */,
 				1638BD87274672DD00638D52 /* AnimatedCollectionView.swift */,
-				1638BD9A2746A7B100638D52 /* ProgressButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -365,7 +362,6 @@
 				16F701F327428B3F00988CAD /* HomeViewModel.swift in Sources */,
 				16F701A9274284E100988CAD /* AppDelegate.swift in Sources */,
 				16F702052742C3E400988CAD /* GameCell.swift in Sources */,
-				1638BD9B2746A7B100638D52 /* ProgressButton.swift in Sources */,
 				16F701AB274284E100988CAD /* SceneDelegate.swift in Sources */,
 				16F701ED2742894A00988CAD /* HomeCoordinator.swift in Sources */,
 				16F701B3274284E100988CAD /* CandiBustApp.xcdatamodeld in Sources */,

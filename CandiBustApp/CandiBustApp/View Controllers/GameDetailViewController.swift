@@ -17,6 +17,8 @@ class GameDetailViewController: UIViewController {
     private let descriptionLabel = UILabel()
     private let readMoreButton = UIButton()
     private var collectionView = AnimatedCollectionView()
+    private var downloadTrailingConstraint: NSLayoutConstraint?
+    private var downloadCloseButton = UIButton()
     
     var animationCompleted: (() -> Void)?
     var animationInfo: CellAnimationInfo?
@@ -55,6 +57,18 @@ extension GameDetailViewController {
         setupDescriptionLabel()
         setupMoreButton()
         setupCollectionView()
+        setupDownloadCloseButton()
+    }
+    
+    func setupDownloadCloseButton() {
+        view.addSubview(downloadCloseButton)
+        downloadCloseButton.setImage(UIImage.init(systemName: "multiply.circle.fill")?.withTintColor(.green).withRenderingMode(.alwaysOriginal), for: .normal)
+        downloadCloseButton.setImage(UIImage.init(systemName: "checkmark.circle.fill")?.withTintColor(.green).withRenderingMode(.alwaysOriginal), for: .selected)
+        downloadCloseButton.translatesAutoresizingMaskIntoConstraints = false
+        downloadCloseButton.widthAnchor.constraint(equalToConstant: 30.0).isActive = true
+        downloadCloseButton.heightAnchor.constraint(equalToConstant: 30.0).isActive = true
+        downloadCloseButton.centerYAnchor.constraint(equalTo: button.centerYAnchor).isActive = true
+        downloadCloseButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5.0).isActive = true
     }
     
     private func setupCollectionView() {
@@ -86,6 +100,7 @@ extension GameDetailViewController {
         titleLabel.alpha = 0.0
         descriptionLabel.alpha = 0.0
         readMoreButton.alpha = 0.0
+        self.downloadCloseButton.alpha = 0.0
     }
     private func setupIcon() {
         view.addSubview(iconView)
@@ -112,20 +127,47 @@ extension GameDetailViewController {
         view.addSubview(button)
         button.style = .style1
         button.setTitle(viewModel.nextButtonTitle, for: .normal)
-        button.anchorToSuperView(bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
-                                 topRelation: .ignore,
-                                 leading: 20,
-                                 trailing: 20,
-                                 bottom: 20.0)
+        let constraints = button.anchorToSuperView(bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
+                                                   topRelation: .ignore,
+                                                   leading: 20,
+                                                   trailing: 20,
+                                                   bottom: 20.0)
+        self.downloadTrailingConstraint = constraints.filter( { $0.firstAttribute == .trailing }).first
+        
         button.action = {
+            self.downloadCloseButton.isHidden = false
             self.button.progress = 0
+            self.downloadCompleted()
+        }
+    }
+    
+    private func downloadCompleted() {
+        
+        UIView.animate(withDuration: 0.5) {
+            self.downloadTrailingConstraint?.constant = 40.0
+            self.view.layoutIfNeeded()
+        } completion: { _ in
             // Just add temporary animation. Progress can be set as per downoad progress
             UIView.animate(withDuration: 2.0) {
                 self.button.progress = 1.0
+                self.downloadCloseButton.alpha = 1.0
                 self.button.layoutIfNeeded()
             } completion: { _ in
-                self.button.progress = 0.0
+                self.downloadCloseButton.isSelected = true
+                self.displayPlayButton()
             }
+        }
+    }
+    
+    private func displayPlayButton() {
+        UIView.animate(withDuration: 0.3) {
+            self.downloadCloseButton.alpha = 0.0
+            self.button.alpha = 0.0
+            self.button.progress = 0.0
+        } completion: { _ in
+            self.downloadCloseButton.isSelected = true
+            self.button.style = .style2
+            self.animatePlayButton()
         }
     }
     
@@ -242,5 +284,23 @@ extension GameDetailViewController {
         })
         self.animateButton()
         self.animateTitle()
+    }
+    
+    private func animatePlayButton() {
+        downloadTrailingConstraint?.constant = 20.0
+        button.title = "Play"
+        button.action = {
+            // Play button press
+            print("Play button press")
+        }
+        self.view.layoutIfNeeded()
+        let position = button.center
+        let fromPosition = CGPoint.init(x: position.x, y: position.y + 100.0)
+        button.center = fromPosition
+        UIView.animate(withDuration: 0.5) {
+            self.button.center = position
+            self.button.alpha = 1.0
+            self.view.layoutIfNeeded()
+        }
     }
 }
