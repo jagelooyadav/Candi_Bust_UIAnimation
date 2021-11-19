@@ -11,6 +11,7 @@ import UIKit
 enum ButtonStyle {
     case style1
     case style2
+    case style3
 }
 
 /**
@@ -100,6 +101,8 @@ class ProgressBarButton: UIButton {
                         return .green
                     case .style2:
                         return .blue
+                    case .style3:
+                        return .black
                 }
             }
             self.backgroundColor = colour()

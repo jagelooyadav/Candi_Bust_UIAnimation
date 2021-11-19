@@ -20,6 +20,7 @@
 		1638BDB72746EBC000638D52 /* UIColor+Candi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDB62746EBC000638D52 /* UIColor+Candi.swift */; };
 		1638BDBC27479FAE00638D52 /* GameWalletData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDBB27479FAE00638D52 /* GameWalletData.swift */; };
 		1638BDC12747A02100638D52 /* WalletBallanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDC02747A02100638D52 /* WalletBallanceViewModel.swift */; };
+		1638BDC62747B5A600638D52 /* PlayerReadyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDC52747B5A600638D52 /* PlayerReadyStateView.swift */; };
 		16F701A9274284E100988CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701A8274284E100988CAD /* AppDelegate.swift */; };
 		16F701AB274284E100988CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AA274284E100988CAD /* SceneDelegate.swift */; };
 		16F701AD274284E100988CAD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AC274284E100988CAD /* HomeViewController.swift */; };
@@ -71,6 +72,7 @@
 		1638BDB62746EBC000638D52 /* UIColor+Candi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Candi.swift"; sourceTree = "<group>"; };
 		1638BDBB27479FAE00638D52 /* GameWalletData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWalletData.swift; sourceTree = "<group>"; };
 		1638BDC02747A02100638D52 /* WalletBallanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBallanceViewModel.swift; sourceTree = "<group>"; };
+		1638BDC52747B5A600638D52 /* PlayerReadyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerReadyStateView.swift; sourceTree = "<group>"; };
 		16F701A5274284E100988CAD /* CandiBustApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandiBustApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F701A8274284E100988CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16F701AA274284E100988CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				16F702162742DC0400988CAD /* ProgressBarButton.swift */,
 				1638BD87274672DD00638D52 /* AnimatedCollectionView.swift */,
 				1638BDB12746E1BC00638D52 /* PlayerView.swift */,
+				1638BDC52747B5A600638D52 /* PlayerReadyStateView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				16F702172742DC0400988CAD /* ProgressBarButton.swift in Sources */,
 				1638BD6C2744207100638D52 /* GameDetailViewModel.swift in Sources */,
 				1638BDC12747A02100638D52 /* WalletBallanceViewModel.swift in Sources */,
+				1638BDC62747B5A600638D52 /* PlayerReadyStateView.swift in Sources */,
 				1638BDB22746E1BC00638D52 /* PlayerView.swift in Sources */,
 				16F701FC2742925500988CAD /* UIView+Anchor.swift in Sources */,
 				1638BD88274672DD00638D52 /* AnimatedCollectionView.swift in Sources */,

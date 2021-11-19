@@ -21,6 +21,7 @@ class PlayerView: UIView {
     private var topHeaderGhostHeight: NSLayoutConstraint?
     private let item1Ghost = ItemGhost()
     private let item2Ghost = ItemGhost()
+    private var ballnceView: WalletBallanceView?
     
     var state: PlayerState = .initial
     
@@ -48,8 +49,7 @@ class PlayerView: UIView {
             if self?.state == .initial {
                 self?.state = .balance
                 self?.showBalanceView()
-            }
-            if self?.state == .balance {
+            } else if self?.state == .balance {
                 self?.state = .ready
                 self?.openReadyState()
             }
@@ -57,7 +57,24 @@ class PlayerView: UIView {
     }
     
     func openReadyState() {
+        let readyView = PlayerReadyStateView()
+        readyView.backgroundColor = .white
+        ballnceView?.addSubview(readyView)
+        readyView.anchorToSuperView()
+        self.nextButton.alpha = 0.0
+        self.nextButton.style = .style3
+        self.nextButton.title = "Confirm"
+        self.setNeedsDisplay()
+        self.nextButton.transform = CGAffineTransform.init(scaleX: 1/self.nextButton.bounds.width, y: 1.0/60.0)
+        UIView.animate(withDuration: 0.5) {
+            self.nextButton.alpha = 1.0
+            self.nextButton.transform = .identity
+            self.setNeedsDisplay()
+        }
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            readyView.animate()
+        }
     }
     
     private func showBalanceView() {
@@ -72,6 +89,7 @@ class PlayerView: UIView {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             ballanceView.animate()
         }
+        self.ballnceView = ballanceView
     }
     
     private func setupTopHeaderGhost() {

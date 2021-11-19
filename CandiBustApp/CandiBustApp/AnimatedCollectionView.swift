@@ -63,13 +63,11 @@ private class PageCell: UICollectionViewCell {
     }
     
     func animateFromRight() {
-        let position = self.center
-        let fromPosition = CGPoint.init(x: position.x + self.frame.width/2, y: position.y)
-        self.center = fromPosition
+        self.transform = CGAffineTransform.init(translationX: self.frame.origin.x + self.frame.width/2, y: self.frame.minY)
         self.alpha = 0.0
-        UIView.animate(withDuration: 1.0) {
+        UIView.animate(withDuration: 0.5) {
             self.alpha = 1.0
-            self.center = position
+            self.transform = .identity
         }
     }
     
