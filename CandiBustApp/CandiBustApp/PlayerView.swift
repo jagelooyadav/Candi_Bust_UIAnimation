@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 
+enum PlayerState {
+    case initial
+    case balance
+    case ready
+}
+
 class PlayerView: UIView {
     private let nextButton = ProgressBarButton()
     private let topHeaderGhost = UIView()
@@ -15,6 +21,9 @@ class PlayerView: UIView {
     private var topHeaderGhostHeight: NSLayoutConstraint?
     private let item1Ghost = ItemGhost()
     private let item2Ghost = ItemGhost()
+    
+    var state: PlayerState = .initial
+    
     init() {
         super.init(frame: .zero)
         self.setup()
@@ -34,6 +43,34 @@ class PlayerView: UIView {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             self.setupTopHeaderGhost()
             self.setupItemGhost()
+        }
+        nextButton.action = { [weak self] in
+            if self?.state == .initial {
+                self?.state = .balance
+                self?.showBalanceView()
+            }
+            if self?.state == .balance {
+                self?.state = .ready
+                self?.openReadyState()
+            }
+        }
+    }
+    
+    func openReadyState() {
+        
+    }
+    
+    private func showBalanceView() {
+        let ballanceView = WalletBallanceView(viewModel: WalletBallanceViewModel(data: GameWalletData(ballance: "$30.0",
+                                                                                                      wallets: [Wallet(value: "5"),
+                                                                                                                Wallet(value: "10"),
+                                                                                                            Wallet(value: "15")])))
+        self.addSubview(ballanceView)
+        ballanceView.anchorToSuperView(bottomRelation: .ignore)
+        ballanceView.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20.0).isActive = true
+        self.layoutIfNeeded()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            ballanceView.animate()
         }
     }
     
@@ -158,6 +195,161 @@ private class ItemGhost: UIView {
             self.circleGohost.alpha = 1.0
             self.layoutIfNeeded()
         } completion: { _ in
+        }
+    }
+}
+
+class WalletBallanceView: UIView {
+    
+    let viewModel: WalletBallanceViewModelProtocol
+    
+    private let topGohost = UIView()
+    private var topGohostWidth: NSLayoutConstraint?
+    private var topGohostHeight: NSLayoutConstraint?
+    private let middleGhost = UIView()
+    private let bottomGhost = UIView()
+    private let circleGhost = UIStackView()
+    private let ballanceDescriptionView = UIView()
+    
+    private var middleGohostWidth: NSLayoutConstraint?
+    private var middleGohostHeight: NSLayoutConstraint?
+    
+    init(viewModel: WalletBallanceViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
+    private func setup() {
+        self.backgroundColor = .white
+        topGohost.backgroundColor = .ghostColor
+        self.addSubview(topGohost)
+        topGohost.anchorToSuperView(leadingRelation: .greaterOrEqual,
+                                       trailingRelation: .greaterOrEqual,
+                                       bottomRelation: .ignore,
+                                       top: 30.0)
+        topGohostHeight = topGohost.heightAnchor.constraint(equalToConstant: 0.0)
+        topGohostWidth = topGohost.widthAnchor.constraint(equalToConstant: 0.0)
+        topGohostHeight?.isActive = true
+        topGohostWidth?.isActive = true
+        topGohost.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        
+        ///
+        middleGhost.backgroundColor = .ghostColor
+        self.addSubview(middleGhost)
+        middleGhost.anchorToSuperView(topAnchor: topGohost.bottomAnchor,
+                                    leadingRelation: .greaterOrEqual,
+                                    trailingRelation: .greaterOrEqual,
+                                    bottomRelation: .ignore,
+                                    top: 30.0)
+        middleGohostHeight = middleGhost.heightAnchor.constraint(equalToConstant: 0.0)
+        middleGohostWidth = middleGhost.widthAnchor.constraint(equalToConstant: 0.0)
+        middleGohostHeight?.isActive = true
+        middleGohostWidth?.isActive = true
+        middleGhost.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        
+        circleGhost.backgroundColor = .clear
+        circleGhost.spacing = 20.0
+        self.addSubview(circleGhost)
+        circleGhost.anchorToSuperView(topAnchor: middleGhost.bottomAnchor,
+                                      leadingRelation: .greaterOrEqual,
+                                      trailingRelation: .greaterOrEqual,
+                                      bottomRelation: .ignore,
+                                      top: 10,
+                                      bottom: 30.0)
+        circleGhost.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        circleGhost.axis = .horizontal
+        circleGhost.distribution = .fillEqually
+        circleGhost.alpha = 0.0
+        viewModel.selectedIndex = 0
+        for (index, wallet) in self.viewModel.wallets.enumerated() {
+            let circle = UIView()
+            circle.backgroundColor = viewModel.selectedIndex == index ? .green : .ghostColor
+            circle.translatesAutoresizingMaskIntoConstraints = false
+            circle.widthAnchor.constraint(equalToConstant: 60.0).isActive = true
+            circle.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
+            circle.layer.cornerRadius = 30.0
+            let label = UILabel()
+            circle.addSubview(label)
+            label.anchorToSuperView(topRelation: .ignore, bottomRelation: .ignore)
+            label.textAlignment = .center
+            label.centerYAnchor.constraint(equalTo: circle.centerYAnchor).isActive = true
+            label.text = wallet
+            label.textColor = .white
+            circleGhost.addArrangedSubview(circle)
+        }
+        addbalanceView()
+    }
+    
+    private func addbalanceView() {
+        self.addSubview(ballanceDescriptionView)
+        ballanceDescriptionView.anchorToSuperView(topAnchor: circleGhost.bottomAnchor,
+                                                  trailingRelation: .greaterOrEqual,
+                                                  bottomRelation: .greaterOrEqual,
+                                                  leading: 40, top: 20.0, bottom: 30)
+        let label = UILabel()
+        label.text = viewModel.balanceHeading
+        ballanceDescriptionView.addSubview(label)
+        label.anchorToSuperView(trailingRelation: .ignore,
+                                topRelation: .ignore,
+                                bottomRelation: .ignore)
+        let ghost = UIView()
+        ghost.backgroundColor = .ghostColor
+        ballanceDescriptionView.addSubview(ghost)
+        ghost.anchorToSuperView(leadingAnchor: label.trailingAnchor, leading: 10.0)
+        ghost.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
+        ghost.widthAnchor.constraint(equalToConstant: 30.0).isActive = true
+        ghost.centerYAnchor.constraint(equalTo: ballanceDescriptionView.centerYAnchor).isActive = true
+        ballanceDescriptionView.alpha = 0.0
+    }
+    
+    func animate() {
+        self.animateToGhost(completion: {
+            self.animateCicles()
+            self.animateBalance()
+        })
+    }
+    
+    private func animateCicles() {
+        guard let superView = self.superview else { return }
+        self.circleGhost.transform = CGAffineTransform(translationX: superView.frame.width + 100, y: 0)
+        self.layoutIfNeeded()
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: UIView.AnimationOptions.beginFromCurrentState) {
+            self.circleGhost.transform = .identity
+            self.circleGhost.alpha = 1.0
+            self.layoutIfNeeded()
+        } completion: { _ in
+        }
+    }
+    
+    private func animateBalance() {
+        guard let superView = self.superview else { return }
+        self.ballanceDescriptionView.transform = CGAffineTransform(translationX: -superView.frame.width - 100, y: 0)
+        self.layoutIfNeeded()
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: UIView.AnimationOptions.beginFromCurrentState) {
+            self.ballanceDescriptionView.transform = .identity
+            self.ballanceDescriptionView.alpha = 1.0
+            self.layoutIfNeeded()
+        } completion: { _ in
+        }
+    }
+    
+    private func animateToGhost(completion: (() -> Void)? = nil) {
+        UIView.animate(withDuration: 0.5, delay: 0.3, options: UIView.AnimationOptions.curveEaseInOut) {
+            self.topGohost.alpha = 1.0
+            self.topGohostWidth?.constant = self.frame.width * 0.4
+            self.topGohostHeight?.constant = 30.0
+            
+            self.middleGhost.alpha = 1.0
+            self.middleGohostWidth?.constant = self.frame.width * 0.3
+            self.middleGohostHeight?.constant = 20.0
+            self.layoutIfNeeded()
+        } completion: { _ in
+            completion?()
         }
     }
 }
