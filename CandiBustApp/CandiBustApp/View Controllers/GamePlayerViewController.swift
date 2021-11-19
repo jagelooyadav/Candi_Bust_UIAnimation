@@ -33,7 +33,7 @@ class GamePlayerViewController: UIViewController {
         playerView.backgroundColor = .white
         let constaints = playerView.anchorToSuperView(bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
                                      topRelation: .ignore)
-        playerView.heightAnchor.constraint(equalTo: self.view.heightAnchor,multiplier: 0.4).isActive = true
+        playerView.heightAnchor.constraint(equalToConstant: 360.0).isActive = true
         let bottomConstraint = constaints.filter { $0.firstAttribute == .bottom }.first
         self.playerBottomConstraint = bottomConstraint
         bottomConstraint?.constant = -view.frame.width * 0.8

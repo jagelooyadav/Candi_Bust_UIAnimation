@@ -78,8 +78,8 @@ extension GameDetailViewController {
                                       bottomRelation: .ignore,
                                       leading: 0,
                                       trailing: 0,
-                                      top: 10)
-        collectionView.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -20.0).isActive = true
+                                      top: 20)
+        collectionView.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -30.0).isActive = true
     }
     
     func setupCloseButton() {
