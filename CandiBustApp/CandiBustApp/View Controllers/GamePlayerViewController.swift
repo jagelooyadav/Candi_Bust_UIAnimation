@@ -33,10 +33,10 @@ class GamePlayerViewController: UIViewController {
         playerView.backgroundColor = .white
         let constaints = playerView.anchorToSuperView(bottomAnchor: view.safeAreaLayoutGuide.bottomAnchor,
                                      topRelation: .ignore)
-        playerView.heightAnchor.constraint(equalTo: self.view.heightAnchor,multiplier: 0.5).isActive = true
+        playerView.heightAnchor.constraint(equalTo: self.view.heightAnchor,multiplier: 0.4).isActive = true
         let bottomConstraint = constaints.filter { $0.firstAttribute == .bottom }.first
         self.playerBottomConstraint = bottomConstraint
-        bottomConstraint?.constant = -view.frame.width * 0.7
+        bottomConstraint?.constant = -view.frame.width * 0.8
         view.layoutIfNeeded()
         UIView.animate(withDuration: 0.3) {
             bottomConstraint?.constant = 0
@@ -52,7 +52,7 @@ class GamePlayerViewController: UIViewController {
     
     @objc private func tap() {
         UIView.animate(withDuration: 0.5) {
-            self.playerBottomConstraint?.constant = -self.view.frame.width * 0.7
+            self.playerBottomConstraint?.constant = -self.view.frame.width * 0.8
             self.view.layoutIfNeeded()
         } completion: { _ in
             self.dismiss(animated: false, completion: nil)
