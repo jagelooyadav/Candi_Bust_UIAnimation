@@ -6,3 +6,5 @@ What is handled in it:
   - Custom animation for navigation controller
   - All possible animation using CGAffintransform
   - Frame animation, center position aimation.
+
+Company never came back after review this code but overall nice experence to implement it. I hope they utilised these code for their personal benfits :)
