@@ -21,6 +21,7 @@
 		1638BDBC27479FAE00638D52 /* GameWalletData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDBB27479FAE00638D52 /* GameWalletData.swift */; };
 		1638BDC12747A02100638D52 /* WalletBallanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDC02747A02100638D52 /* WalletBallanceViewModel.swift */; };
 		1638BDC62747B5A600638D52 /* PlayerReadyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1638BDC52747B5A600638D52 /* PlayerReadyStateView.swift */; };
+		16B68D042779B9F20097CE5E /* Demo_small.mov in Resources */ = {isa = PBXBuildFile; fileRef = 16B68D032779B9F20097CE5E /* Demo_small.mov */; };
 		16F701A9274284E100988CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701A8274284E100988CAD /* AppDelegate.swift */; };
 		16F701AB274284E100988CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AA274284E100988CAD /* SceneDelegate.swift */; };
 		16F701AD274284E100988CAD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F701AC274284E100988CAD /* HomeViewController.swift */; };
@@ -73,6 +74,7 @@
 		1638BDBB27479FAE00638D52 /* GameWalletData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWalletData.swift; sourceTree = "<group>"; };
 		1638BDC02747A02100638D52 /* WalletBallanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBallanceViewModel.swift; sourceTree = "<group>"; };
 		1638BDC52747B5A600638D52 /* PlayerReadyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerReadyStateView.swift; sourceTree = "<group>"; };
+		16B68D032779B9F20097CE5E /* Demo_small.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Demo_small.mov; sourceTree = "<group>"; };
 		16F701A5274284E100988CAD /* CandiBustApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandiBustApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F701A8274284E100988CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16F701AA274284E100988CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				16F701A8274284E100988CAD /* AppDelegate.swift */,
 				16F701AA274284E100988CAD /* SceneDelegate.swift */,
 				16F701AE274284E100988CAD /* Main.storyboard */,
+				16B68D032779B9F20097CE5E /* Demo_small.mov */,
 				16F701B4274284E200988CAD /* Assets.xcassets */,
 				16F701B6274284E200988CAD /* LaunchScreen.storyboard */,
 				16F701B9274284E200988CAD /* Info.plist */,
@@ -354,6 +357,7 @@
 				16F701B8274284E200988CAD /* LaunchScreen.storyboard in Resources */,
 				16F701B5274284E200988CAD /* Assets.xcassets in Resources */,
 				16F701B0274284E100988CAD /* Main.storyboard in Resources */,
+				16B68D042779B9F20097CE5E /* Demo_small.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

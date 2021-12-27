@@ -16,7 +16,7 @@ protocol GameDetailViewModelProtocol {
 }
 
 class GameDetailViewModel: GameDetailViewModelProtocol {
-    private weak var coordinator: GameDetailCoordinatorProtocol?
+    weak var coordinator: GameDetailCoordinatorProtocol?
     init(coordinator: GameDetailCoordinatorProtocol) {
         self.coordinator = coordinator
     }

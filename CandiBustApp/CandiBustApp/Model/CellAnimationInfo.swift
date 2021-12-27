@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+/// Structure to hold Game cell animation information
 struct CellAnimationInfo {
     let iconAbsolutePosition: CGPoint?
     let butonAbsolutePosition: CGPoint?
