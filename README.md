@@ -6,3 +6,6 @@ What is handled in it:
   - Custom animation for navigation controller
   - All possible animation using CGAffintransform
   - Frame animation, center position aimation.
+
+Demo video is 
+https://github.com/jagelooyadav/Candi_Bust_UIAnimation/blob/master/CandiBustApp/CandiBustApp/Demo_small.mov
